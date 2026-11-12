@@ -3,10 +3,14 @@ package com.example.NutreAPP.models;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 public class Visualizacion {
     @Id
@@ -18,6 +22,17 @@ public class Visualizacion {
 
     @Column(name="completado", nullable = false, unique = false)
     private Boolean completado;
+
+    //Creando una relacion
+    @ManyToOne 
+    @JoinColumn(name = "id")
+    @JsonBackReference(value = "usuario-visualizacion")
+    private Usuario usuario;
+
+    @ManyToOne 
+    @JoinColumn(name = "id")
+    @JsonBackReference(value = "video-visualizacion")
+    private Video video;
 
     public Visualizacion() {
     }
