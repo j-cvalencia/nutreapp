@@ -1,8 +1,19 @@
 package com.example.NutreAPP.services;
 
-public class VisualizacionServicio {
-    //metodo para guardar
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.NutreAPP.models.Usuario;
+import com.example.NutreAPP.models.Visualizacion;
+import com.example.NutreAPP.repositories.IVisualizacionRepositorio;
+
+public class VisualizacionServicio {
+    @Autowired
+    private IVisualizacionRepositorio repositorio;
+
+    //metodo para guardar
+    public Visualizacion guardar(Visualizacion datos){
+        return this.repositorio.save(datos);
+    };
     //metodo para buscar por id
 
     //metodo para buscar todos

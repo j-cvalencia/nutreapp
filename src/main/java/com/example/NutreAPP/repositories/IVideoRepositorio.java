@@ -8,17 +8,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.NutreAPP.models.Usuario;
+import com.example.NutreAPP.models.Video;
 
 @Repository 
-public interface IVideoRepositorio extends JpaRepository<Usuario, UUID>{
+public interface IVideoRepositorio extends JpaRepository<Video, UUID>{
 
-    List<Usuario> findByCategoria(String categoria);
+    List<Video> findByCategoria(String categoria);
 
-    List<Usuario> findByTituloIgnoreCase(String titulo);
+    List<Video> findByTituloIgnoreCase(String titulo);
 
-    Optional<Usuario> findByDescripcion(String descripcion);
+    Optional<Video> findByDescripcion(String descripcion);
 
-    Optional<Usuario> findByUrl(String url);
+    Optional<Video> findByUrl(String url);
 
-    List<Usuario> findByTituloAndCategoria(String titulo, String categoria);
+    List<Video> findByTituloAndCategoria(String titulo, String categoria);
 }

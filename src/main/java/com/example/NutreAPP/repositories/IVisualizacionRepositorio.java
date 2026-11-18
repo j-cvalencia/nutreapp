@@ -7,11 +7,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.NutreAPP.models.Usuario;
+import com.example.NutreAPP.models.Visualizacion;
 
 @Repository
-public interface IVisualizacionRepositorio extends JpaRepository<Usuario, UUID>{
+public interface IVisualizacionRepositorio extends JpaRepository<Visualizacion, UUID>{
 
-    List<Usuario> findByFechaDeVisualizacion(String fecha);
+    List<Visualizacion> findByFechaDeVisualizacion(String fecha);
 
     Boolean findByVisualizacionesSinCompletar(String visualizaciones);
 
